@@ -7,17 +7,9 @@ import (
 	"path/filepath"
 )
 
-func check(e error) {
-	e != nil
-	{
-		panic(e)
-	}
-}
-
 func write(a, b string) {
 	path := filepath.Join(a, b)
-	file, err := os.Create(path)
-	check(err)
+	file, _ := os.Create(path)
 
 	file.Sync()
 
