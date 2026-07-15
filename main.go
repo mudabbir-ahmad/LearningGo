@@ -7,9 +7,16 @@ import (
 	"path/filepath"
 )
 
+func check(e error) {
+	if e != nil {
+		panic(e)
+	}
+}
+
 func write(a, b string) {
 	path := filepath.Join(a, b)
-	file, _ := os.Create(path)
+	file, err := os.Create(path)
+	check(err)
 
 	file.Sync()
 
@@ -23,4 +30,5 @@ func main() {
 	fmt.Println("Leanring go.")
 	fmt.Println("Adding a function to create a file")
 	write("./", "file.txt")
+	fmt.Println("File created successfully. with contents inside")
 }
