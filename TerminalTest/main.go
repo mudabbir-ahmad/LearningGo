@@ -33,7 +33,7 @@ func main() {
 	fmt.Println("Username:", username)
 	fmt.Println("Password:", password)
 
-	fmt.Print("The delim should cause you to end the line whenever you press back slash, then hit enter: \n")
+	fmt.Print("The delim should cause you to end the line whenever you press back slash, then hit enter:p \n")
 	test, _ := reader.ReadString('\\')
 	fmt.Println("You entered:", test)
 }
